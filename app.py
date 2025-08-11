@@ -38,8 +38,8 @@ if not api_key:
     st.info("Please make sure you have a .env file with your API key defined.")
 else:
     # Create text input fields for the user
-    origin = st.text_input("Enter Origin Address:", "Guntur Junction, Andhra Pradesh")
-    destination = st.text_input("Enter Destination Address:", "NanakramGuda, Hyderabad")
+    origin = st.text_input("Enter Origin Address:", "Guntur, Andhra Pradesh")
+    destination = st.text_input("Enter Destination Address:")
 
     # Create a button to trigger the directions search
     if st.button("Get Directions"):
@@ -72,4 +72,5 @@ else:
             else:
                 st.error("Could not find a route. Please check your addresses.")
         else:
+
             st.warning("Please enter both an origin and a destination.")
