@@ -31,6 +31,7 @@ st.title("📍 Google Maps Route Planner")
 
 # Load the API key from environment variables
 api_key = os.getenv("GOOGLE_MAPS_API")
+password = os.getenv("password")
 
 # Check if the API key is available
 if not api_key:
@@ -38,13 +39,14 @@ if not api_key:
     st.info("Please make sure you have a .env file with your API key defined.")
 else:
     # Create text input fields for the user
+    login_password = st.text_input("Enter password to run")
     origin = st.text_input("Enter Origin Address:", "Guntur, Andhra Pradesh")
     destination = st.text_input("Enter Destination Address:")
 
     # Create a button to trigger the directions search
     if st.button("Get Directions"):
         # Validate that both fields have input
-        if origin and destination:
+        if origin and destination and login_password==password:
             with st.spinner("Finding the best route..."):
                 directions = get_directions(api_key, origin, destination)
 
@@ -73,4 +75,4 @@ else:
                 st.error("Could not find a route. Please check your addresses.")
         else:
 
-            st.warning("Please enter both an origin and a destination.")
+            st.warning("Please enter correct password and include origin and a destination.")
