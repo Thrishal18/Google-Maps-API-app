@@ -2,3 +2,4 @@ googlemaps
 datetime
 beautifulsoup4
 streamlit
+dotenv
