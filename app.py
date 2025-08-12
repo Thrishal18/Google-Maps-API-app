@@ -27,7 +27,7 @@ def get_directions(api_key, origin, destination):
 # --- STREAMLIT APP ---
 
 # Set the title of the web app
-st.title("📍 Google Maps Path Viewer")
+st.title("📍 Google Maps Path Viewer Agent")
 
 # Load the API key from environment variables
 api_key = os.getenv("GOOGLE_MAPS_API")
@@ -76,4 +76,5 @@ else:
         else:
 
             st.warning("Please enter correct password and include origin and a destination.")
+
 
